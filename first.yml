@@ -1,6 +1,6 @@
 ---
 - hosts: centos01
-  ansible_become: true
+  become: true
   tasks:
     - name: motd
       copy:
