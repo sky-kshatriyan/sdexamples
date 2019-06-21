@@ -1,8 +1,9 @@
 ---
--
 hosts: centos01
-- name: Copy file with owner and permissions
-  copy:
-    src: centos_motd
-    dest: /etc/motd
+user: root
+tasks:
+  - name: motd
+    copy:
+      src: centos_motd
+      dest: /etc/motd
 ...
