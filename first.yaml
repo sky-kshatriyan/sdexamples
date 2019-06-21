@@ -1,4 +1,19 @@
 ---
+# Target
+hosts: centos01
+user: root
+
+# variables
+
+# Tasks:
+- name: Configuring MOTD
+  copy:
+    src: centos_motd
+    dest: /etc/motd
+    
+# Handlers:
+
+#Roles:
 
 
 ...
