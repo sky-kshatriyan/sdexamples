@@ -6,4 +6,9 @@
       copy:
         src: centos_motd
         dest: /etc/motd
+        
+    - name: copy to diff location
+      copy:
+        src: centos_motd
+        dest: /tmp/test.txt
 ...
