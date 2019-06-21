@@ -10,10 +10,10 @@ user: root
   copy:
     src: centos_motd
     dest: /etc/motd
-    
+
 # Handlers:
 
 #Roles:
-
+...
 
 ...
