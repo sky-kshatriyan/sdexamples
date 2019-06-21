@@ -1,4 +1,5 @@
 ---
+-
 hosts: centos01
 - name: Copy file with owner and permissions
   copy:
