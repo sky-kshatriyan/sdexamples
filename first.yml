@@ -6,9 +6,14 @@
       copy:
         src: centos_motd
         dest: /etc/motd
-        
+
     - name: copy to diff location
       copy:
         src: centos_motd
-        dest: /tmp/test.txt
+        dest: /tmp/testnew.txt
+
+    - name: Remove file
+      file:
+        path: /tmp/test.txt
+        state: absent
 ...
