@@ -1,9 +1,9 @@
 ---
-hosts: centos01
-user: root
-tasks:
-  - name: motd
-    copy:
-      src: centos_motd
-      dest: /etc/motd
+- hosts: centos01
+  ansible_become: true
+  tasks:
+    - name: motd
+      copy:
+        src: centos_motd
+        dest: /etc/motd
 ...
