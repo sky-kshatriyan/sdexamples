@@ -5,6 +5,6 @@
   tasks:
     - name: motd
       copy:
-        src: centos_motd
+        content: MOTD playbook Stuff
         dest: /etc/motd
 ...
