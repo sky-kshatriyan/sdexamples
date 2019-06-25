@@ -3,18 +3,23 @@
   become: true
   gather_facts: false
   vars:
-    motd_var: MOTD playbook Stuff changed
+    motd_centos: MOTD on centos
+    motd_ubuntu: MOTD on ubuntu
   tasks:
-    - name: motd
+    - name: motdCentos
       copy:
-        content: "{{ motd_var }}"
+        content: "{{ motd_centos }}"
         dest: /etc/motd
       notify: MOTD Notification
+      when: ansible_distribution == "Centos"
+    - name: motdUbuntu
+      copy:
+        content: "{{ motd_ubuntu }}"
+        dest: /etc/motd
+      notify: MOTD Notification
+      when: ansible_distribution == "Ubuntu"
   handlers:
     - name: MOTD Notification
       debug:
         msg: MSG received
-    - name: SKYDEVOPS
-      debug:
-        msg: skydevops
 ...
