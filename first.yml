@@ -1,7 +1,7 @@
 ---
-- hosts: centos01
+- hosts: linux
   become: true
-  gather_facts: false
+  gather_facts: true
   vars:
     motd_centos: MOTD on centos
     motd_ubuntu: MOTD on ubuntu
