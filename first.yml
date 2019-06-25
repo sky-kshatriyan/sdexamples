@@ -11,7 +11,7 @@
         content: "{{ motd_centos }}"
         dest: /etc/motd
       notify: MOTD Notification
-      when: ansible_distribution == "Centos"
+      when: ansible_distribution == "CentOS"
     - name: motdUbuntu
       copy:
         content: "{{ motd_ubuntu }}"
