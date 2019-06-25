@@ -9,4 +9,12 @@
       copy:
         content: "{{ motd_var }}"
         dest: /etc/motd
+      notify: MOTD Notification
+  handlers:
+    - name: MOTD Notification
+      debug:
+        msg: MSG received
+    - name: SKYDEVOPS
+      debug:
+        msg: skydevops
 ...
