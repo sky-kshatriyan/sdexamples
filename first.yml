@@ -3,7 +3,7 @@
   become: true
   gather_facts: false
   vars:
-    motd_var: MOTD playbook Stuff
+    motd_var: MOTD playbook Stuff changed
   tasks:
     - name: motd
       copy:
