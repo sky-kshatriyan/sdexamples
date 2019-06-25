@@ -1,7 +1,7 @@
 ---
 - hosts: centos01
   become: true
-  # gather_facts: false
+  gather_facts: false
   tasks:
     - name: motd
       copy:
