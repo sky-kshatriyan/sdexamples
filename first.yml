@@ -2,9 +2,11 @@
 - hosts: centos01
   become: true
   gather_facts: false
+  vars:
+    motd_var: MOTD playbook Stuff
   tasks:
     - name: motd
       copy:
-        content: MOTD playbook Stuff
+        content: {{ motd_var }}
         dest: /etc/motd
 ...
