@@ -1,25 +1,26 @@
 ---
-- hosts: linux
+- hosts: centos01
   become: true
-  gather_facts: true
+  gather_facts: false
   vars:
-    motd_centos: MOTD on centos
-    motd_ubuntu: MOTD on ubuntu
+    dict:
+      dict_key01: value01
   tasks:
-    - name: motdCentos
-      copy:
-        content: "{{ motd_centos }}"
-        dest: /etc/motd
-      notify: MOTD Notification
-      when: ansible_distribution == "CentOS"
-    - name: motdUbuntu
-      copy:
-        content: "{{ motd_ubuntu }}"
-        dest: /etc/motd
-      notify: MOTD Notification
-      when: ansible_distribution == "Ubuntu"
-  handlers:
-    - name: MOTD Notification
+    - name: create file
+      file:
+        src: test.txt
+        dest: /tmp/test.txt
+      register: sdfile
+    - name: debugging
+      debug: 
+        msg: {{sdfile}}
+    - name: named dict
       debug:
-        msg: MSG received
+        msg: "{{ dict }}"
+    - name: named dict with key value . notation
+      debug:
+        msg: "{{ dict.dict_key01 }}"
+    - name: named dict with brackets notation
+      debug:
+        msg: "{{ dict['dict_key01'] }}"
 ...
