@@ -7,7 +7,7 @@
       dict_key01: value01
   tasks:
     - name: create file
-      file:
+      copy:
         src: test.txt
         dest: /tmp/test.txt
         state: file
