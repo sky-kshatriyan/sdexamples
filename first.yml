@@ -19,7 +19,7 @@
         msg: "{{ dict }}"
     - name: named dict with key value . notation
       debug:
-        msg: "{{ dict.dict_key01 }}"
+        msg: "{{ sdfile.md5sum }}"
     - name: named dict with brackets notation
       debug:
         msg: "{{ dict['dict_key01'] }}"
