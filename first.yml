@@ -14,9 +14,6 @@
     - name: debugging
       debug: 
         msg: "{{ sdfile }}"
-    - name: named dict
-      debug:
-        msg: "{{ dict }}"
     - name: named dict with key value . notation
       debug:
         msg: "{{ sdfile.checksum }}"
