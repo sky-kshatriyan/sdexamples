@@ -22,5 +22,5 @@
         msg: "{{ sdfile.checksum }}"
     - name: named dict with brackets notation
       debug:
-        msg: "{{ sdfile['checksum'] }}"
+        msg: "{{ sdfile['diff['after['path']']'] }}"
 ...
