@@ -22,5 +22,5 @@
         msg: "{{ sdfile.checksum }}"
     - name: named dict with brackets notation
       debug:
-        msg: "{{ dict['dict_key01'] }}"
+        msg: "{{ sdfile['checksum'] }}"
 ...
