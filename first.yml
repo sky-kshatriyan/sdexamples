@@ -10,6 +10,7 @@
       file:
         src: test.txt
         dest: /tmp/test.txt
+        state: file
       register: sdfile
     - name: debugging
       debug: 
