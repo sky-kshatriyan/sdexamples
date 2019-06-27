@@ -13,7 +13,7 @@
       register: sdfile
     - name: debugging
       debug: 
-        msg: {{sdfile}}
+        msg: "{{ sdfile }}"
     - name: named dict
       debug:
         msg: "{{ dict }}"
