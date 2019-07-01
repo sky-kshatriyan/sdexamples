@@ -1,12 +1,10 @@
 ---
 - hosts: centos01
   become: true
-  gather_facts: false
-  vars_prompt:
-    - name: username
+  gather_facts: true
 
   tasks:
     - name: testing prompt
       debug:
-        msg: "{{ username }}"
+        msg: "{{ hostsvars['ansible_hostname'] }}"
 ...
