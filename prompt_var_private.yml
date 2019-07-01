@@ -1,0 +1,13 @@
+---
+- hosts: centos01
+  become: true
+  gather_facts: false
+  vars_prompt:
+    - name: password
+      private: true
+
+  tasks:
+    - name: testing prompt
+      debug:
+        msg: "{{ password }}"
+...

@@ -1,0 +1,20 @@
+---
+- hosts: centos01
+  become: true
+  gather_facts: false
+  vars:
+    named_list:
+      - item01
+      - item02
+
+  tasks:
+    - name: Inline dict
+      debug:
+        msg: "{{ named_list }}"
+    - name: named dict with key value . notation
+      debug:
+        msg: "{{ named_list.0 }}"
+    - name: named dict with brackets notation
+      debug:
+        msg: "{{ named_list[0] }}"
+...

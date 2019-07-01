@@ -1,0 +1,19 @@
+---
+- hosts: centos01
+  become: true
+  gather_facts: false
+  vars:
+    inline_dict:
+      {inline_dict_key01: value01}
+
+  tasks:
+    - name: Inline dict
+      debug:
+        msg: "{{ inline_dict }}"
+    - name: named dict with key value . notation
+      debug:
+        msg: "{{ inline_dict.inline_dict_key01 }}"
+    - name: named dict with brackets notation
+      debug:
+        msg: "{{ inline_dict['inline_dict_key01'] }}"
+...

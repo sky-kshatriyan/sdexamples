@@ -1,0 +1,14 @@
+ext_key: ext_value
+
+ext_dict:
+  ext_dict_key: ext_dict_value
+
+ext_inline_dict:
+  {ext_inline_key: ext_inline_value}
+
+ext_named_list:
+  - ext_item01
+  - ext_item02
+
+ext_inline_named_list:
+  ['inline_item01', 'inline_item02']

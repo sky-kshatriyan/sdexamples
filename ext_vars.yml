@@ -1,0 +1,18 @@
+---
+- hosts: centos01
+  become: true
+  gather_facts: false
+  vars_files:
+      - ext_vars_file.yml
+
+  tasks:
+    - name: ext var dict
+      debug:
+        msg: "{{ ext_key }}"
+    - name: named dict with key value
+      debug:
+        msg: "{{ ext_dict }}"
+    - name: named dict with . notation
+      debug:
+        msg: "{{ ext_dict.ext_dict_key }}"
+...

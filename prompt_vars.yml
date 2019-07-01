@@ -1,0 +1,12 @@
+---
+- hosts: centos01
+  become: true
+  gather_facts: false
+  vars_prompt:
+    - name: username
+
+  tasks:
+    - name: testing prompt
+      debug:
+        msg: "{{ username }}"
+...
