@@ -3,18 +3,18 @@
   become: true
   gather_facts: false
   vars:
-    named_list:
+    sdlist:
       - item01
       - item02
 
   tasks:
     - name: Inline dict
       debug:
-        msg: "{{ named_list }}"
+        msg: "{{ sdlist }}"
     - name: named dict with key value . notation
       debug:
-        msg: "{{ named_list.0 }}"
+        msg: "{{ sdlist.0 }}"
     - name: named dict with brackets notation
       debug:
-        msg: "{{ named_list[0] }}"
+        msg: "{{ sdlist[0] }}"
 ...
