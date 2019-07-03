@@ -9,5 +9,5 @@
 
   - name: Testing HostVars
     debug:
-      msg: "{{ hostvars[ansible_hostname].ansible_port | default('22')}}"
+      msg: "{{ hostvars[ansible_hostname].shashi | default('22')}}"
 ...
