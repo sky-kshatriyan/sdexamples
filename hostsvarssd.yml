@@ -1,5 +1,5 @@
 ---
-- hosts: centos01
+- hosts: linux
 
   tasks:
   - name: Testing HostVars
