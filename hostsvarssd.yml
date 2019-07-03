@@ -8,5 +8,5 @@
       msg: "{{ hostvars[ansible_hostname].shashi | default('22')}}"
   - name: Testing Group vars
     debug:
-      msg: "{{ groupvars[ansible_user] }}"
+      msg: "{{ ansible_user | default('shashi') }}"
 ...
