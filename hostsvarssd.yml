@@ -5,5 +5,5 @@
   tasks:
   - name: Testing HostVars
     debug:
-      msg: "{{ hostvars[ansible_hostname].shashi }}"
+      msg: "{{ hostvars[ansible_hostname].ansible_port | default('')}}"
 ...
