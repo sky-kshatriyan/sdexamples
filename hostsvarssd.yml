@@ -1,10 +1,8 @@
 ---
 - hosts: centos01
-  become: true
-  gather_facts: true
 
   tasks:
-    - name: testing prompt
-      debug:
-        msg: "{{ hostvars['ansible_hostname'].ansible_port }}"
+  - name: Testing HostVars
+    debug:
+      msg: "{{ hostvars['ansible_hostname'].ansible_port }}"
 ...
