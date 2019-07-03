@@ -3,6 +3,10 @@
   gather_facts: true
 
   tasks:
+  - name: Testing HostVars without default var
+    debug:
+      msg: "{{ hostvars[ansible_hostname].ansible_port }}"
+
   - name: Testing HostVars
     debug:
       msg: "{{ hostvars[ansible_hostname].ansible_port | default('')}}"
