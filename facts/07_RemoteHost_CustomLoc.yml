@@ -1,0 +1,32 @@
+---
+- hosts: all
+  gather_facts: true
+
+  tasks:
+  - name: Make Facts Directory
+    file:
+      path: /home/shashi/ansible/facts.d
+      owner: shashi
+      group: shashi
+      state: directory
+  - name: Copy Fact01
+    copy:
+      src: /home/shashi/sdwork/sdansible/facts.d/getDate01.fact
+      dest: /home/shashi/ansible/facts.d/getDate01.fact
+      owner: shashi
+      group: shashi
+      mode: 755
+  - name: Copy Fact02
+    copy:
+      src: /home/shashi/sdwork/sdansible/facts.d/getDate02.fact
+      dest: /home/shashi/ansible/facts.d/getDate02.fact
+      owner: shashi
+      group: shashi
+      mode: 755
+  - name: Refresh Facts
+    setup:
+      fact_path: /home/shashi/ansible/facts.d
+  - name: Get IP Address
+    debug:
+      msg: "{{ ansible_default_ipv4.address }}"
+...
