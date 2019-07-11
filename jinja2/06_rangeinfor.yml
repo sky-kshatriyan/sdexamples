@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: Jinja2 Syntactical Excercises - IF Statement
+      debug:
+        msg: >
+            --== FOR loop with Range ==--
+            {# --== Jinja2 FOR Loops ==-- #}
+            {% for item in range(1,11) %}
+            {{item}}
+            {% endfor %}

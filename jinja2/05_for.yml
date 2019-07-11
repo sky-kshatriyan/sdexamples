@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: Jinja2 Syntactical Excercises - IF Statement
+      debug:
+        msg: >
+            --== FOR Loops ==--
+            {# --== Jinja2 FOR Loops ==-- #}
+            {% for item in ansible_all_ipv4_addresses -%}
+            IPV4 Address_{{loop.index}} = {{item}}
+            {% endfor %}

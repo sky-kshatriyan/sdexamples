@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: Jinja2 Syntactical Excercises - IF Statement
+      debug:
+        msg: >
+            --== FOR Loops with Range step and IF statement with break ==-
+            {# --== Jinja2 FOR Loops with Range step and IF statement ==-- #}
+            {% for item in range(10,0, -1) %}
+            {% if item == 5 -%}
+                {% break %}
+            {% endif %}
+            {{ item }}
+            {% endfor %}

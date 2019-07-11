@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: Jinja2 Syntactical Excercises - IF Statement
+      debug:
+        msg: >
+            --== Define a Variable ==--
+            {# --== Jinja2 IF statement ==-- #}
+            {% set sd_var = 'skydevops' -%}
+            {% if sd_var is defined -%}
+                sd_var is defined
+            {%else -%}
+                sd_var is not defined
+            {% endif %}

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+    - name: Jinja2 Syntactical Excercises - IF Statement
+      debug:
+        msg: >
+            --== IF the HOSTNAME is control, include a message ==--
+            {# IF the HOSTNAME is control, include a message -#}
+            {% if ansible_hostname == "controlhost" -%}
+                This is the controlhost
+            {%else -%}
+                This belongs to {{ansible_os_family}} Family
+            {% endif %}
