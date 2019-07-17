@@ -30,6 +30,4 @@
   - name: lopp in query
     debug:
       var: item
-    loop: "{{ sddata | json_query(my_query) }}"
-    vars:
-      my_query: "skydevops.servers[?cluster=='c02']"
+    loop: "{{ sddata | json_query(skydevops.servers[?cluster==''c02'']) }}"
