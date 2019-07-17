@@ -1,25 +1,25 @@
 - hosts: control
   vars:
     sddata:
-    skydevops:
-        cluster:
+      skydevops:
+          cluster:
             - name: "c01"
             - name: "c02"
-        servers:
+          servers:
             - name: "s01"
-                cluster: "c02"
-                port: "8080"
+              cluster: "c02"
+              port: "8080"
             - name: "s02"
-                cluster: "c02"
-                port: "8081"
+              cluster: "c02"
+              port: "8081"
             - name: "s03"
-                cluster: "co1"
-                port: "4502"
-        apps:
+              cluster: "co1"
+              port: "4502"
+          apps:
             - name: "jenkins"
-                target: "c02"
+              target: "c02"
             - name: "aem"
-                target: "c01"
+              target: "c01"
   tasks:
   - name: get clusters
     debug:
