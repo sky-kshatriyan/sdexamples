@@ -27,7 +27,3 @@
   - name: get servers
     debug:
       msg: " {{ sddata | json_query('skydevops.servers[*].name') }} "
-  - name: lopp in query
-    debug:
-      var: item
-    loop: "{{ sddata | json_query(skydevops.servers[?cluster==''c02'']) }}"
