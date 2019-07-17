@@ -32,4 +32,4 @@
       var: item
     loop: "{{ sddata | json_query(my_query) }}"
     vars:
-      my_query: "skydevops.servers[?cluster=='c02'].port"
+      my_query: "skydevops.servers[?cluster=='c02']"
