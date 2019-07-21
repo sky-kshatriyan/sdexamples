@@ -1,0 +1,11 @@
+---
+- hosts: linux
+  tasks:
+  - name: Set FACT
+    set_fact:
+      sd_fact: SKYDEVOPS Rocks!!
+  - name: Display FACT
+    debug:
+      msg: "{{  sd_fact }}"
+...
+    

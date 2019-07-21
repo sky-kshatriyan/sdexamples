@@ -1,0 +1,11 @@
+---
+- hosts: linux
+  tasks:
+  - name: Register OUTPUT
+    command: hostname -s
+    register: hostname_output
+  - name: Display the registered output
+    debug:
+      msg: "{{hostname_output}}"
+...
+    

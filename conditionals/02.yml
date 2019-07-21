@@ -1,0 +1,15 @@
+---
+- hosts: linux
+  tasks:
+  - name: Set FACT
+    set_fact:
+      sd_fact: SKYDEVOPS Rocks!!
+      sd_distro: "{{ ansible_distribution | upper }}"
+  - name: Display FACT
+    debug:
+      msg: "{{  sd_fact }}"
+  - name: Display Distribution
+    debug:
+      msg: "{{ sd_distro }}"
+...
+    

@@ -1,0 +1,26 @@
+---
+- hosts: linux
+  tasks:
+  - name: Set FACT for centos
+    set_fact:
+      sd_web_port: 80
+      sd_web_path: /usr/share/www
+      sd_web_user: www-data
+    when: ansible_distribution == 'CentOS'
+  - name: Set Fact for Ubuntu
+    set_fact:
+      sd_web_port: 81
+      sd_web_path: /var/www/html
+      sd_web_user: nginx
+    when: ansible_distribution == 'Ubuntu'
+  - name: Display FACT -- PORT
+    debug:
+      msg: "webserver_port={{sd_web_port}}"
+  - name: Dispaly FACT -- PATH
+    debug:
+      msg: "webserver_path={{sd_web_path}}"
+  - name: Display FACT -- USER
+    debug:
+      msg: "webserver_user={{sd_web_user}}"
+...
+    

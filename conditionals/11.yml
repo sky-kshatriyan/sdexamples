@@ -1,0 +1,14 @@
+---
+- hosts: linux
+  tasks:
+  - name: Register OUTPUT
+    command: hostname -s
+    when: 
+      - ansible_distribution == 'CentOS'
+      - ansible_distribution_major_version | >= 7
+    register: host_output
+  - name: Display registered output
+    debug:
+      var: host_output
+...
+    

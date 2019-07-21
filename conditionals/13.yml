@@ -1,0 +1,19 @@
+---
+- hosts: linux
+  tasks:
+  - name: Register OUTPUT
+    command: hostname -s
+    when: 
+      - ansible_distribution == 'CentOS'
+      - ansible_distribution_major_version | >= 7
+    register: host_output
+  - name: Display registered output
+    debug:
+      msg: Parameter is changed
+    when: host_output is changed
+  - name: Display Register output when skipped
+    debug:
+      msg: Parameter is skipped
+    when: host_output is skipped
+...
+    
