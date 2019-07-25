@@ -1,0 +1,11 @@
+---
+- hosts: linux
+  tasks:
+  - name: Testing Loops
+    user:
+      name: "{{item}}"
+      state: absent
+    with_items:
+      - skydevops
+      - yebbare
+...
