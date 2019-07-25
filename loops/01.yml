@@ -1,0 +1,16 @@
+---
+- hosts: linux
+  tasks:
+  - name: Testing Loops
+    copy:
+      content: "Welcome to {{item}} Linux -- SKYDEVOPS Rocks"
+      dest: /etc/motd
+    notify: MOTD changed
+    with_items: ['CentOS', 'Ubuntu']
+    when: ansible_distribution == item
+  handlers:
+  - name: MOTD changed
+    debug:
+      msg: MOTD has Changed
+...
+    
